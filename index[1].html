@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday Khushi ❤️</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffd3a5);
+background-size:400% 400%;
+animation:bg 10s ease infinite;
+overflow-x:hidden;
+}
+
+@keyframes bg{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+.container{
+max-width:900px;
+margin:30px auto;
+background:#fff;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,.2);
+}
+
+.header{
+background:#ff4d6d;
+color:white;
+padding:25px;
+text-align:center;
+}
+
+.typing{
+font-size:2rem;
+overflow:hidden;
+white-space:nowrap;
+border-right:3px solid white;
+width:0;
+margin:auto;
+animation:typing 4s steps(30,end) forwards,
+blink .8s infinite;
+}
+
+@keyframes typing{
+from{width:0}
+to{width:100%}
+}
+
+@keyframes blink{
+50%{border-color:transparent}
+}
+
+.slideshow{
+position:relative;
+height:500px;
+overflow:hidden;
+}
+
+.slide{
+position:absolute;
+width:100%;
+height:100%;
+opacity:0;
+transition:opacity 1s;
+}
+
+.slide.active{
+opacity:1;
+}
+
+.slide img{
+width:100%;
+height:100%;
+object-fit:cover;
+animation:zoom 8s linear infinite;
+}
+
+@keyframes zoom{
+from{transform:scale(1);}
+to{transform:scale(1.12);}
+}
+
+.message{
+padding:30px;
+text-align:center;
+line-height:1.8;
+color:#333;
+}
+
+.message h2{
+color:#ff4d6d;
+margin-bottom:15px;
+}
+
+.footer{
+background:#fff0f3;
+padding:20px;
+text-align:center;
+font-weight:bold;
+color:#ff4d6d;
+}
+
+.heart{
+position:fixed;
+bottom:-50px;
+color:red;
+animation:float 8s linear infinite;
+pointer-events:none;
+}
+
+@keyframes float{
+0%{
+transform:translateY(0);
+opacity:1;
+}
+100%{
+transform:translateY(-120vh);
+opacity:0;
+}
+}
+
+@media(max-width:768px){
+.slideshow{
+height:350px;
+}
+.typing{
+font-size:1.3rem;
+}
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+<h1 class="typing">🎂 Happy 21st Birthday Khushi ❤️</h1>
+</div>
+
+<div class="slideshow">
+
+<div class="slide active">
+<img src="khushi1.jpg">
+</div>
+
+<div class="slide">
+<img src="khushi2.jpg">
+</div>
+
+<div class="slide">
+<img src="khushi3.jpg">
+</div>
+
+</div>
+
+<div class="message">
+
+<h2>Dear Khushi ❤️</h2>
+
+<p>
+Aaj ka din sirf tumhara hai.
+</p>
+
+<br>
+
+<p>
+Har saal birthday aata hai, lekin kuch log apni muskurahat aur apni achchai ki wajah se zindagi mein hamesha yaad reh jaate hain.
+Tum unhi logon mein se ek ho.
+</p>
+
+<br>
+
+<p>
+Main dil se dua karta hoon ki tumhari zindagi mein hamesha khushiyan rahein, tumhare sapne poore hon aur tum hamesha isi tarah muskurati raho.
+</p>
+
+<br>
+
+<p>
+21 saal ka ye naya safar tumhare liye bahut saari achievements, yaadein aur khushiyan lekar aaye.
+</p>
+
+<br>
+
+<p>
+Stay happy, stay blessed and keep shining ✨
+</p>
+
+<br>
+
+<h2>❤️ Happy Birthday Khushi ❤️</h2>
+
+</div>
+
+<div class="footer">
+With Best Wishes ❤️<br>
+Manjit Patil
+</div>
+
+</div>
+
+<script>
+
+let slides=document.querySelectorAll(".slide");
+let current=0;
+
+setInterval(()=>{
+slides[current].classList.remove("active");
+current=(current+1)%slides.length;
+slides[current].classList.add("active");
+},3000);
+
+function createHeart(){
+let heart=document.createElement("div");
+heart.className="heart";
+heart.innerHTML="❤️";
+heart.style.left=Math.random()*100+"vw";
+heart.style.fontSize=(15+Math.random()*30)+"px";
+document.body.appendChild(heart);
+
+setTimeout(()=>{
+heart.remove();
+},8000);
+}
+
+setInterval(createHeart,400);
+
+</script>
+
+</body>
+</html>
